@@ -24,6 +24,11 @@
     <script>
 
     $(document).ready(function() {
+      lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+          });
+
       $(".utils-toggle > .nav-link").click(function() {
         $(".utils-toggle > .nav-link").removeClass('active');
         $(this).addClass('active');
