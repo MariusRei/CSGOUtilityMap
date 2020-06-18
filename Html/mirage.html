@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../CSS/lightbox.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../Javascript/main.js"></script>
+    <script src="../Javascript/lightbox.js"></script>
+
+
+    <title>CSGO Smokes</title>
+  </head>
+  <body>
+
+    <script>
+
+    $(document).ready(function() {
+      $(".utils-toggle > .nav-link").click(function() {
+        $(".utils-toggle > .nav-link").removeClass('active');
+        $(this).addClass('active');
+      });
+
+      var mapLayoutWidth = $(".map_layout").outerWidth();
+      $(".map_layout").css("height",mapLayoutWidth);
+
+      $(".loc_deploy").onm
+
+
+    });
+
+    $( window ).resize(function() {
+      var mapLayoutWidth = $(".map_layout").outerWidth();
+      $(".map_layout").css("height",mapLayoutWidth);
+    });
+
+
+
+    </script>
+
+    <div class="container background">
+
+      <h1>
+        <a href="../index.html"><i class="fa fa-arrow-left"></i></a>
+        <span>Mirage</span>
+      </h1>
+
+      <nav class="nav utils-toggle">
+        <a class="nav-link active" onclick="toggleUtil('smokes')" href="#">Smokes</a>
+        <a class="nav-link" onclick="toggleUtil('flashes')" href="#">Flashes</a>
+        <a class="nav-link" onclick="toggleUtil('molos')" href="#">Molos</a>
+        <a class="nav-link" onclick="toggleUtil('nades')" href="#">Nades</a>
+      </nav>
+
+      <div class="map_layout">
+        <img class="map_img" src="../images/mirage/mirage_map.jpg"/>
+
+        <div class="utilities" id="smokes">
+          <div class="loc_deploy">
+            <img class="util_icon" src="../images/smoke.png" style="top:80%;left:35%"/>
+          </div>
+          <div class="loc_throw">
+            <img class="util_icon" src="../images/smoke.png" style="top:50%;left:35%"/>
+          </div>
+        </div>
+
+
+        <div class="utilities"  id="flashes">
+
+          <a class="flash" href="../images/mirage/mirage.jpg" data-lightbox="roadtrip">
+            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:50%;left:35%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:60%;left:15%"/>
+          </a>
+
+        </div>
+
+        <div class="utilities"  id="molos">
+          <div class="loc_deploy">
+            <img class="util_icon" src="../images/molo.png" style="top:50%;left:35%"/>
+          </div>
+          <div class="loc_throw">
+            <img class="util_icon" src="../images/molo.png" style="top:50%;left:35%"/>
+          </div>
+        </div>
+
+        <div class="utilities"  id="nades">
+          <div class="loc_deploy">
+            <img class="util_icon" src="../images/nade.png" style="top:50%;left:35%"/>
+          </div>
+          <div class="loc_throw">
+            <img class="util_icon" src="../images/nade.png" style="top:50%;left:35%"/>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
