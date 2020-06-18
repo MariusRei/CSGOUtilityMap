@@ -32,8 +32,13 @@
       var mapLayoutWidth = $(".map_layout").outerWidth();
       $(".map_layout").css("height",mapLayoutWidth);
 
-      $(".loc_deploy").onm
+      $(".loc_deploy").mouseover(function() {
+        $(this).next().toggle();
+      });
 
+      $(".loc_deploy").mouseout(function() {
+        $(this).next().toggle();
+      });
 
     });
 

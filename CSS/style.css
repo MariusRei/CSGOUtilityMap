@@ -91,3 +91,7 @@ a:hover {
   height: 100%;
   position: absolute;
 }
+
+.loc_throw {
+  display: none;
+}
