@@ -70,6 +70,10 @@ object-fit: cover;
   padding: 0;
 }
 
+.utilities a:hover {
+    opacity: 1;
+}
+
 .utilities > .row > .col-md-3 > .col-md-3 {
   border: 1px solid black;
   width: 100%;

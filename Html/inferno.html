@@ -42,10 +42,13 @@
       $(".map_layout").css("height",mapLayoutWidth);
 
       $(".loc_deploy").mouseover(function() {
-        $(this).next().toggle();
+        $(".loc_deploy").hide();
+        $(this).next().show();
+        $(this).show();
       });
 
       $(".loc_deploy").mouseout(function() {
+        $(".loc_deploy").show();
         $(this).next().toggle();
       });
         
@@ -82,31 +85,82 @@
 
         <div class="utilities"  id="smokes">
 
-          <a class="smoke" href="../images/mirage/T_A_CT_T-Spawn_JumpThrow.jpg" data-lightbox="smoke1">
-            <img class="util_icon loc_deploy" src="../images/smoke.png" style="top:80%;left:45%"/>
-            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:50%;left:88%"/>
+          <a class="smoke" href="../images/inferno/smokes/T_A_Long_TopMid_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/smoke.png" style="top:61%;left:88%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:68%;left:61%"/>
           </a>
 
-          <a class="smoke" href="../images/mirage/T_A_Jungle_VorRampOben_Throw.jpg" data-lightbox="smoke2">
-            <img class="util_icon loc_deploy" src="../images/smoke.png" style="top:64%;left:49%"/>
-            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:62%;left:80%"/>
-          </a>            
+          <a class="smoke" href="../images/inferno/smokes/T_B_Coffins_BananaWood_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/smoke.png" style="top:12%;left:50%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:45%;left:44%"/>
+          </a>   
+            
+          <a class="smoke" href="../images/inferno/smokes/T_B_CT_BananaWood_Throw.png" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/smoke.png" style="top:21%;left:61%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:45%;left:44%"/>
+          </a>   
             
         </div>
 
 
         <div class="utilities"  id="flashes">
 
-          <a class="nade" href="../images/mirage/mirage.jpg" data-lightbox="flash1">
-            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:64%;left:49%"/>
-            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:60%;left:15%"/>
+          <a class="flash" href="../images/inferno/flashes/CT_A_Short_Pit_Throw.jpg" data-lightbox="flash">
+            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:79%;left:81%"/>
+            <img class="util_icon loc_throw" src="../images/ct.png" style="top:83%;left:93%"/>
           </a>
 
+          <a class="flash" href="../images/inferno/flashes/T_A_Long_Topmid_Left+Right.png" data-lightbox="flash">
+            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:79%;left:81%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:83%;left:93%"/>
+          </a>
+            
+          <a class="flash" href="../images/inferno/flashes/T_A_MidAndLong_Barrells_Throw.png" data-lightbox="flash">
+            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:79%;left:81%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:83%;left:93%"/>
+          </a>
+            
+          <a class="flash" href="../images/inferno/flashes/T_A_Site_Apps_CrouchThrow.jpg" data-lightbox="flash">
+            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:79%;left:81%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:83%;left:93%"/>
+          </a>          
+            
+          <a class="flash" href="../images/inferno/flashes/T_B_Banane_T-Stairs_JumpThrow.jpg" data-lightbox="flash">
+            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:79%;left:81%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:83%;left:93%"/>
+          </a>    
+            
+          <a class="flash" href="../images/inferno/flashes/T_B_SiteandCT_BananaWood_JumpThrow.png" data-lightbox="flash">
+            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:79%;left:81%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:83%;left:93%"/>
+          </a>                
+            
+          <a class="flash" href="../images/inferno/flashes/T_B_SiteandCT_Corner_Throw.png" data-lightbox="flash">
+            <img class="util_icon loc_deploy" src="../images/flash.png" style="top:79%;left:81%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:83%;left:93%"/>
+          </a>                
+            
+            
         </div>
 
         <div class="utilities"  id="molos">
 
-          <a class="molo" href="../images/mirage/mirage.jpg" data-lightbox="molo1">
+          <a class="molo" href="../images/inferno/molos/T_B_Dark_Car_JumpThrow.jpg" data-lightbox="molo">
+            <img class="util_icon loc_deploy" src="../images/molo.png" style="top:50%;left:35%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:60%;left:15%"/>
+          </a>
+            
+          <a class="molo" href="../images/inferno/molos/T_B_Default_Car_JumpThrow.png" data-lightbox="molo">
+            <img class="util_icon loc_deploy" src="../images/molo.png" style="top:50%;left:35%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:60%;left:15%"/>
+          </a>
+            
+          <a class="molo" href="../images/inferno/molos/T_B_Oranges_Car_JumpThrow.png" data-lightbox="molo">
+            <img class="util_icon loc_deploy" src="../images/molo.png" style="top:50%;left:35%"/>
+            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:60%;left:15%"/>
+          </a>
+        
+          <a class="molo" href="../images/inferno/molos/T_A_Apps_2ndMid_RunThrow.mp4" data-lightbox="molo">
             <img class="util_icon loc_deploy" src="../images/molo.png" style="top:50%;left:35%"/>
             <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:60%;left:15%"/>
           </a>
@@ -114,11 +168,6 @@
         </div>
 
         <div class="utilities"  id="nades">
-
-          <a class="nade" href="../images/mirage/mirage.jpg" data-lightbox="nade1">
-            <img class="util_icon loc_deploy" src="../images/nade.png" style="top:50%;left:35%"/>
-            <img class="util_icon loc_throw" src="../images/terrorist.png" style="top:60%;left:15%"/>
-          </a>
 
         </div>
 
