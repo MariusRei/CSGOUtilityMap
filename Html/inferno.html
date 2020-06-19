@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../Javascript/main.js"></script>
-    <script src="../Javascript/lightbox.js"></script>
+    <script src="../Javascript/imagelightbox.min.js"></script>
 
 
     <title>Inferno</title>
@@ -25,14 +25,9 @@
     <script>
 
     $(document).ready(function() {
-      lightbox.option({
-            'resizeDuration': 50,
-            'wrapAround': true,
-            'fadeDuration': 150,
-            'maxWidth': 700,
-            'maxHeight': 700
-          });
 
+        $( 'a' ).imageLightbox();
+        
       $(".utils-toggle > .nav-link").click(function() {
         $(".utils-toggle > .nav-link").removeClass('active');
         $(this).addClass('active');
@@ -85,7 +80,7 @@
 
         <div class="utilities"  id="smokes">
 
-          <a class="smoke" href="../images/inferno/smokes/T_A_Long_TopMid_Throw.jpg" data-lightbox="smoke">
+          <a class="smoke" href="../images/inferno/smokes/T_A_Long_TopMid_Throw.jpg" data-imagelightbox="smoke">
             <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="left:88%;top:62%"/>
             <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="left:61%;top:69%"/>
           </a>

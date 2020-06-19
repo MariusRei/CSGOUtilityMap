@@ -3,3 +3,9 @@
         max-width: 540px;
     }
 }
+
+@media (min-height: 701px) {
+    .container {
+        max-width: 800px;
+    }
+}
