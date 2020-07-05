@@ -1,0 +1,652 @@
+/* */
+
+body {
+  background-color: rgb(105, 119, 148);
+  color: white;
+}
+
+a {
+  color: white;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.utilities {
+    display: none;
+    height: 100%;
+}
+
+a.nav-link.active {
+  background-color: white;
+  border-radius: 5px;
+  color: rgb(105, 119, 148);
+}
+
+h1 {
+  margin: 20px;
+}
+
+.entry-content > *:first-child {
+    margin: 0 !important;
+}
+
+.img-map-tn {
+  width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.map-overview {
+  text-align: center;
+  padding: 0;
+    overflow: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
+        cursor: pointer;
+}
+
+.map-overview:hover {
+    cursor: pointer;
+}
+
+.map-overview::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    background: black;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    opacity: 0.35;
+    cursor: pointer;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.map-overview:hover::before {
+    /*opacity: 0.4;*/
+}
+
+.map-overview > h3 {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+	margin: 0 !important;
+}
+
+.map_layout {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  margin: -30px 0px 0px -30px;
+  pointer-events:none;
+}
+
+
+
+.utilities > * {
+  pointer-events: all;
+}
+
+.interaction_area {
+}
+
+.utilities > .row > .col-md-3 {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+
+.utilities > .row > .col-md-3 > .col-md-3 {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+
+.row {
+  margin: 0px
+}
+
+
+.map_img {
+  margin: 40px 0px 0px 40px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hoverImg {
+    height: 130%;
+}
+
+
+
+
+/* FONTS */
+
+@font-face {
+font-family: 'Trueno Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Regular'), url('../fonts/TruenoRg.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Regular Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Regular Italic'), url('../fonts/TruenoRgIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno UltraLight';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno UltraLight'), url('../fonts/TruenoUltLt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno UltraLight Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno UltraLight Italic'), url('../fonts/TruenoUltLtIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Light';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Light'), url('../fonts/TruenoLt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Light Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Light Italic'), url('../fonts/TruenoLtIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno SemiBold';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno SemiBold'), url('../fonts/TruenoSBd.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno SemiBold Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno SemiBold Italic'), url('../fonts/TruenoSBdIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Bold';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Bold'), url('../fonts/TruenoBd.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Bold Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Bold Italic'), url('../fonts/TruenoBdIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Bold Outline';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Bold Outline'), url('../fonts/TruenoBdOl.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Bold Outline Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Bold Outline Italic'), url('../fonts/TruenoBdOlIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno ExtraBold';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno ExtraBold'), url('../fonts/TruenoExBd.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno ExtraBold Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno ExtraBold Italic'), url('../fonts/TruenoExBdIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno ExtraBold Outline';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno ExtraBold Outline'), url('../fonts/TruenoExBdOl.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno ExtraBold Outline Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno ExtraBold Outline Italic'), url('../fonts/TruenoExBdOlIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Black';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Black'), url('../fonts/TruenoBlk.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Black Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Black Italic'), url('../fonts/TruenoBlkIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Black Outline';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Black Outline'), url('../fonts/TruenoBlkOl.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Black Outline Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno Black Outline Italic'), url('../fonts/TruenoBlkOlIt.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno UltraBlack';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno UltraBlack'), url('../fonts/TruenoUltBlk.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno UltraBlack Italic';
+font-style: normal;
+font-weight: normal;
+src: local('Trueno UltraBlack Italic'), url('../fonts/TruenoUltBlkIt.woff') format('woff');
+}
+
+body {
+  background-color: rgb(105, 119, 148);
+  color: white;
+  font-family:'Trueno Regular';
+}
+
+a {
+  color: white;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+.utilities {
+    display: none;
+    height: 100%;
+}
+
+#smokes {
+  display: flex;
+}
+
+a.nav-link.active {
+  background-color: white;
+  border-radius: 5px;
+  color: rgb(105, 119, 148);
+}
+
+h1 {
+  margin: 20px;
+}
+
+h3 {
+    font-size: 22px;
+
+}
+
+#backButton > h3 {
+    margin: 0px 0px 0px 12px;
+}
+
+a:hover {
+  /*opacity: 0.75;*/
+  text-decoration: none;
+}
+
+
+.map-overview {
+  text-align: center;
+
+}
+
+.map_layout {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  margin: -40px 0px 0px -40px;
+  pointer-events:none;
+}
+
+.utilities > * {
+  pointer-events: all;
+}
+
+.interaction_area {
+}
+
+.utilities > .row > .col-md-3 {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.utilities a:hover {
+    opacity: 1;
+}
+
+.utilities > .row > .col-md-3 > .col-md-3 {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+
+.row {
+  margin: 0px
+}
+
+.util_icon {
+  position: absolute;
+  height: 58px;
+    -webkit-transition: all 0.1s ease-out ;
+    -moz-transition: all 0.1s ease-out ;
+    -o-transition: all 0.1s ease-out ;
+    transition: all 0.1s ease-out;    
+}
+
+.util_icon:hover {
+    cursor: pointer;
+}
+
+.loc_deploy:hover {
+    height: 50px;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+.loc_throw {
+  display: none;
+}
+
+.map_img {
+  margin: 30px 0px 0px 30px;
+  height: 100%;
+  position: absolute;
+}
+
+
+#fullscreen {
+    display: flex;
+    flex-direction: row;
+    background: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#left {
+    font-size: 15px;
+}
+
+#right {
+    width: 100%;
+    height: 100%;
+    margin-right: 205px;
+    display: flex;
+    justify-content: center;
+}
+
+.utilToggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    background: #5C6065;
+    border-radius: 10px;
+    margin: 15px;
+    overflow: hidden;
+}
+
+.utilToggle > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0.35;
+    cursor: pointer;
+}
+
+.utilToggle > div:hover {
+    background: #404347;
+}
+
+.utilToggle img {
+    height: 45px;
+    margin-top: 15px;
+}
+
+.utilToggle p {
+    margin-top: 6px;
+}
+
+.activeToggle {
+    background: #404347;
+    opacity: 1.0 !important;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   /* align-items: center; */
+    width: 135px;
+    background: #5C6065;
+    border-radius: 10px;
+    margin: 15px;
+    overflow: hidden;
+    padding: 12px;
+    text-align: center;
+}
+
+.toggleSwitch > div {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out
+}
+
+.toggleSwitch span {
+    width: 50%;
+    opacity: 0.35;
+    -webkit-transition: all 0.1s ease-out ;
+    -moz-transition: all 0.1s ease-out ;
+    -o-transition: all 0.1s ease-out ;
+    transition: all 0.1s ease-out;
+    z-index: 1;
+}
+
+.toggleSwitch span:hover {
+    opacity: 1;
+}
+
+.activeOptionsToggle {
+    opacity: 1 !important;
+}
+
+.toggleBG {
+    position: absolute;
+    background: #3E99FF;
+    width: 50%; 
+    height: 100%; 
+    border-radius: 10px;
+    left: 0%;
+  -webkit-transition: all 0.12s ease-out;
+  -moz-transition: all 0.12s ease-out;
+  -o-transition: all 0.12s ease-out;
+  transition: all 0.12s ease-out;
+}
+
+#backButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 15px;
+}
+
+#detailContainer {
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: none;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.backgroundOverlay {
+    background: rgba(0,0,0,0.8);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.detailThrowInfos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 320px;
+    margin: 30px 0px 0px 15px;
+}
+
+.metaInfos {
+    background: #404347;
+    width: 100%;
+    padding: 17px 30px;
+}
+
+.detailThrowInfos > * {
+    margin: 0px 0px 10px 0px;
+    border-radius: 10px;
+}
+
+.metaImages {
+    height: 25%;
+    position: absolute;
+    padding: 0px 75px 0px 25px;
+    bottom: -20px;
+} 
+
+.metaImages > img {
+    border: 2px solid white;
+    padding: 0;
+    margin: 2px;
+    max-height: calc(100% - 30px);
+    max-width: calc(100% - 30px);
+    border-radius: 5px;
+}
+
+.smallTitle {
+    font-size: 15px;
+    opacity: 0.35;
+    margin-bottom: 0;
+}
+
+.lineupImage {
+    padding: 0;
+    margin: 15px;
+    max-height: calc(100% - 30px);
+    max-width: calc(100% - 30px);
+    border-radius: 10px;
+}
+
+.lineupWindow {
+height: 100%;
+    position: absolute;
+    padding: 0px 75px 0px 25px;
+    top: 0;
+    z-index: -1;
+}
+
+.lineupWindowContainer {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.exitBtn:hover {
+    cursor: pointer;
+}
+
+.exitBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 25px;
+}
