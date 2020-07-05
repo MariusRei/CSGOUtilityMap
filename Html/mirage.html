@@ -16,6 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../Javascript/main.js"></script>
     <script src="../Javascript/lightbox.js"></script>
+    <script src="../utilities/utility_mirage.js"></script>
 
 
     <title>CSGO Smokes</title>
@@ -25,6 +26,10 @@
     <script>
 
     $(document).ready(function() {
+        
+      console.log(data);   
+      getUtil(data);    
+        
       lightbox.option({
             'resizeDuration': 50,
             'wrapAround': true,
@@ -42,10 +47,13 @@
       $(".map_layout").css("height",mapLayoutWidth);
 
       $(".loc_deploy").mouseover(function() {
-        $(this).next().toggle();
+        $(".loc_deploy").hide();
+        $(this).next().show();
+        $(this).show();
       });
 
       $(".loc_deploy").mouseout(function() {
+        $(".loc_deploy").show();
         $(this).next().toggle();
       });
         
@@ -84,15 +92,63 @@
 
         <div class="utilities"  id="smokes">
 
-          <a class="smoke" href="../images/mirage/T_A_CT_T-Spawn_JumpThrow.jpg" data-lightbox="smoke1">
-            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:80%;left:45%"/>
-            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:50%;left:88%"/>
+          <a class="smoke" href="../images/mirage/smokes/T_A_CT_T-Spawn_JumpThrow.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:86%;left:41%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:49%;left:89%"/>
           </a>
 
-          <a class="smoke" href="../images/mirage/T_A_Jungle_VorRampOben_Throw.jpg" data-lightbox="smoke2">
-            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:64%;left:49%"/>
-            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:62%;left:80%"/>
-          </a>            
+          <a class="smoke" href="../images/mirage/smokes/T_A_Jungle_VorRampOben_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:68%;left:47%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:65%;left:79%"/>
+          </a>        
+            
+          <a class="smoke" href="../images/mirage/smokes/T_A_Connector_TopMid_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:63%;left:47%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:46%;left:71%"/>
+          </a>         
+            
+          <a class="smoke" href="../images/mirage/smokes/T_A_Jungle_Tripple_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:65%;left:41%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:65%;left:61%"/>
+          </a>               
+            
+          <a class="smoke" href="../images/mirage/smokes/T_A_Mid_T-Spawn_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:43%;left:60%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:32%;left:92%"/>
+          </a>        
+            
+          <a class="smoke" href="../images/mirage/smokes/T_A_Stairs_VorRamp_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:68%;left:51%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:58%;left:87%"/>
+          </a>     
+            
+          <a class="smoke" href="../images/mirage/smokes/T_B_Bank_VorApps_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:21%;left:10%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:20%;left:46%"/>
+          </a>               
+            
+          <a class="smoke" href="../images/mirage/smokes/T_B_KitchenWindow_VorApps_JumpThrow.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:37%;left:20%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:12%;left:58%"/>
+          </a>                
+            
+          <a class="smoke" href="../images/mirage/smokes/T_B_ShortB_VorApps_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:21%;left:29%"/>
+            <img class="util_icon loc_throw" src="../images/icons/terrorist.png" style="top:18%;left:47%"/>
+          </a>                
+            
+            
+            
+            
+          <a class="smoke" href="../images/mirage/smokes/CT_A_Ramp_Firebox-CT_Throw.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:67%;left:65%"/>
+            <img class="util_icon loc_throw" src="../images/icons/ct.png" style="top:84%;left:44%"/>
+          </a>    
+
+          <a class="smoke" href="../images/mirage/smokes/CT_B_VorApps_CT-Spawn_JumpThrow%20.jpg" data-lightbox="smoke">
+            <img class="util_icon loc_deploy" src="../images/icons/smoke.png" style="top:19%;left:42%"/>
+            <img class="util_icon loc_throw" src="../images/icons/ct.png" style="top:60%;left:25%"/>
+          </a>                 
             
         </div>
 

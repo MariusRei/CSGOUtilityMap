@@ -108,14 +108,27 @@
           while($row = $result->fetch_assoc()) {
             ?>
             
+          <!-- OLD: 
             <div class="utilities" style="display:flex;"  id="<?php echo $row["nadeType"]?>">
                   
-            <a class="<?php echo $row["nadeType"]?>" href="../images/inferno/<?php echo $row["nadeType"]?>/<?php echo $row["image"]?>.jpg" data-lightbox="<?php echo $row["nadeType"]?>">
-                <img class="util_icon loc_deploy" src="../images/icons/<?php echo $row["nadeType"]?>.png" style="left:<?php echo $row["deploySpotX"]?>%;top:<?php echo $row["deploySpotY"]?>%"/>
-                <img class="util_icon loc_throw" src="../images/icons/<?php echo $row["team"]?>.png" style="left:<?php echo $row["throwSpotX"]?>%;top:<?php echo $row["throwSpotY"]?>%"/>
-            </a>
+                <a class="<?php echo $row["nadeType"]?>" href="../images/inferno/<?php echo $row["nadeType"]?>/<?php echo $row["image"]?>.jpg" data-lightbox="<?php echo $row["nadeType"]?>">
+                    <img class="util_icon loc_deploy" src="../images/icons/<?php echo $row["nadeType"]?>.png" style="left:<?php echo $row["deploySpotX"]?>%;top:<?php echo $row["deploySpotY"]?>%"/>
+                    <img class="util_icon loc_throw" src="../images/icons/<?php echo $row["team"]?>.png" style="left:<?php echo $row["throwSpotX"]?>%;top:<?php echo $row["throwSpotY"]?>%"/>
+                </a>
                   
-          </div>
+            </div>
+            -->
+          
+          <!-- NEW: -->
+            <div class="utilities" style="display:flex;"  id="<?php echo $row["nadeType"]?>">
+                  
+                <a class="<?php echo $row["nadeType"]?>" href="../images/inferno/<?php echo $row["nadeType"]?>/<?php echo $row["image"]?>.jpg" data-lightbox="<?php echo $row["nadeType"]?>">
+                    <img class="util_icon loc_deploy" src="../images/icons/<?php echo $row["nadeType"]?>.png" style="left:<?php echo $row["deploySpotX"]?>%;top:<?php echo $row["deploySpotY"]?>%"/>
+                    <img class="util_icon loc_throw" src="../images/icons/<?php echo $row["team"]?>.png" style="left:<?php echo $row["throwSpotX"]?>%;top:<?php echo $row["throwSpotY"]?>%"/>
+                </a>
+                  
+            </div>
+          
     <?php
               
             
