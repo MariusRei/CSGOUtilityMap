@@ -39,31 +39,31 @@
         $(".loc_deploy").show();
         $(this).next().toggle();
       });
-        
+
 
     });
 
     $( window ).resize(function() {
         var mapLayoutWidth = $(".map_layout").outerHeight();
         $(".map_layout").css("width",mapLayoutWidth);
-        
+
     });
 
 
-        
-        
+
+
 
     </script>
 
-      
+
     <div id="fullscreen">
-        
+
     <div id="left">
         <a id="backButton" href="http://csgoutilitymap.byethost5.com/">
             <img width="46px" src="../images/icons/SVG/ic_back.svg">
             <h3>de_overpass</h3>
         </a>
-        
+
         <div class="utilToggle">
             <div id="toggleSmoke" onclick="toggleUtil('smoke')" class="activeToggle">
                 <img src="../images/icons/smoke.png">
@@ -75,14 +75,14 @@
             </div>
             <div id="toggleMolo" onclick="toggleUtil('molo')">
                 <img src="../images/icons/molo.png">
-                <p>Molo</p>            
+                <p>Molo</p>
             </div>
             <div id="toggleNade" onclick="toggleUtil('nade')">
                 <img src="../images/icons/nade.png">
-                <p>HE</p>            
+                <p>HE</p>
             </div>
         </div>
-        
+
         <!--
         <div id="options">
             <div id="toggleTickrate">
@@ -91,7 +91,7 @@
                     <div  style="height: 37px; width: 100%; position: relative;">
                         <div class="toggleBG"></div>
                         <span style="opacity: 1.0">64</span>
-                        <span>128</span> 
+                        <span>128</span>
                     </div>
 
                 </div>
@@ -102,47 +102,47 @@
                     <div  style="height: 37px; width: 100%; position: relative;">
                         <div class="toggleBG"></div>
                         <span style="opacity: 1.0">T</span>
-                        <span>CT</span> 
+                        <span>CT</span>
                     </div>
 
                 </div>
             </div>
         </div>
         -->
-    
+
     </div>
-        
+
     <div id="right">
         <div class="map_layout">
         <img class="map_img" src="../images/radars/de_overpass.png"/>
-            
-            
+
+
                          <?php
-      
+
       $host = "sql307.byethost.com";
       $username = "b5_26120572";
       $password = "marREI123";
       $database = "b5_26120572_database";
-      
+
       $mysqli = new mysqli($host, $username, $password, $database);
-      
+
         if ($mysqli->connect_errno) {
             echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
         }
         //echo $mysqli->host_info . "\n" . "<br>";
-      
+
         $sql = "SELECT id, name, nadeType, team, site, deploySpotX, deploySpotY, throwSpotX, throwSpotY, throwType, image_lineup_128, image_lineup_64, image_spot1, image_spot2, image_deploy  FROM overpass";
         $result = $mysqli->query($sql);
 
-            
-            
-        
+
+
+
 
         if ($result->num_rows > 0) {
           // output data of each row
         ?>
-        <div class="utilities" style="display:flex;" id="smoke">    
-        <?php     
+        <div class="utilities" style="display:flex;" id="smoke">
+        <?php
           while($row = $result->fetch_assoc()) {
             $utilDetails = array(
                     "name" => $row["name"],
@@ -156,10 +156,10 @@
                     "image_deploy" => $row["image_deploy"]
                 );
             if ($row['nadeType']=="smoke") {
-            
 
-            
-            ?>    
+
+
+            ?>
             <a class="<?php echo $row["nadeType"]?>" onclick='toggleUtilDetail( <?php echo json_encode($utilDetails);?> , "overpass") ' >
                 <img class="util_icon loc_deploy" src="../images/icons/SVG/ic_<?php echo $row["nadeType"]?>_<?php echo $row["team"]?>.svg" style="left:<?php echo $row["deploySpotX"]?>%;top:<?php echo $row["deploySpotY"]?>%"/>
                 <img class="util_icon loc_throw" src="../images/icons/<?php echo $row["team"]?>.png" style="left:<?php echo $row["throwSpotX"]?>%;top:<?php echo $row["throwSpotY"]?>%"/>
@@ -168,8 +168,8 @@
             }
           }
             ?>
-        </div>  
-        <div class="utilities" id="flash">    
+        </div>
+        <div class="utilities" id="flash">
         <?php
         $result->data_seek(0);
           while($row = $result->fetch_assoc()) {
@@ -185,7 +185,7 @@
                     "image_deploy" => $row["image_deploy"]
                 );
             if ($row['nadeType']=="flash") {
-            ?>  
+            ?>
             <a></a>
             <a class="<?php echo $row["nadeType"]?>" onclick='toggleUtilDetail( <?php echo json_encode($utilDetails);?> ) ' >
                 <img class="util_icon loc_deploy" src="../images/icons/SVG/ic_<?php echo $row["nadeType"]?>_<?php echo $row["team"]?>.svg" style="left:<?php echo $row["deploySpotX"]?>%;top:<?php echo $row["deploySpotY"]?>%"/>
@@ -196,9 +196,9 @@
           }
             ?>
         </div>
-        <div class="utilities" id="molo">    
+        <div class="utilities" id="molo">
         <?php
-        $result->data_seek(0);    
+        $result->data_seek(0);
           while($row = $result->fetch_assoc()) {
             $utilDetails = array(
                     "name" => $row["name"],
@@ -212,7 +212,7 @@
                     "image_deploy" => $row["image_deploy"]
                 );
             if ($row['nadeType']=="molo") {
-            ?>    
+            ?>
             <a class="<?php echo $row["nadeType"]?>" onclick='toggleUtilDetail( <?php echo json_encode($utilDetails);?> ) ' >
                 <img class="util_icon loc_deploy" src="../images/icons/SVG/ic_<?php echo $row["nadeType"]?>_<?php echo $row["team"]?>.svg" style="left:<?php echo $row["deploySpotX"]?>%;top:<?php echo $row["deploySpotY"]?>%"/>
                 <img class="util_icon loc_throw" src="../images/icons/<?php echo $row["team"]?>.png" style="left:<?php echo $row["throwSpotX"]?>%;top:<?php echo $row["throwSpotY"]?>%"/>
@@ -222,9 +222,9 @@
           }
             ?>
         </div>
-        <div class="utilities" id="nade">    
+        <div class="utilities" id="nade">
         <?php
-        $result->data_seek(0);    
+        $result->data_seek(0);
           while($row = $result->fetch_assoc()) {
             $utilDetails = array(
                     "name" => $row["name"],
@@ -238,7 +238,7 @@
                     "image_deploy" => $row["image_deploy"]
                 );
             if ($row['nadeType']=="nade") {
-            ?>    
+            ?>
             <a class="<?php echo $row["nadeType"]?>" onclick='toggleUtilDetail( <?php echo json_encode($utilDetails);?> ) ' >
                 <img class="util_icon loc_deploy" src="../images/icons/SVG/ic_<?php echo $row["nadeType"]?>_<?php echo $row["team"]?>.svg" style="left:<?php echo $row["deploySpotX"]?>%;top:<?php echo $row["deploySpotY"]?>%"/>
                 <img class="util_icon loc_throw" src="../images/icons/<?php echo $row["team"]?>.png" style="left:<?php echo $row["throwSpotX"]?>%;top:<?php echo $row["throwSpotY"]?>%"/>
@@ -247,25 +247,25 @@
             }
           }
             ?>
-        </div>    
-            
-        <?php   
+        </div>
+
+        <?php
         } else {
           echo "0 results";
         }
         $mysqli->close();
-      
+
     ?>
-            
+
       </div>
     </div>
-        
-    </div>  
-      
+
+    </div>
+
     <div id="detailContainer">
         <div class="backgroundOverlay"></div>
         <div>
-            
+
             <!-- <div class="detailThrowInfos">
                 <div class="metaInfos">
                     <h2>CT Smoke A</h2>
@@ -280,15 +280,15 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div> -->
-            
+
             <div class="lineupWindowContainer">
                 <div class="lineupWindow">
                     <img class="lineupImage" src="../images/overpass/smoke/moto_smoke_lineup.jpg">
                 </div>
             </div>
-            
+
             <div style="display: flex; justify-content: center;">
                 <div class="metaImages">
                     <img class="img_spot1" src="../images/overpass/smoke/moto_smoke_deploy.jpg">
@@ -296,12 +296,12 @@
                     <img class="img_deploy" src="../images/overpass/smoke/moto_smoke_spot2.jpg">
                 </div>
             </div>
-            
+
             <a class="exitBtn" onclick="toggleUtilDetail()">
-                <img width="46px" src="../images/icons/SVG/ic_back.svg">
+                <img width="46px" src="../images/icons/SVG/ic_close.svg">
             </a>
         </div>
-    </div>  
-      
+    </div>
+
   </body>
 </html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/responsive.css" media="screen"/>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../CSS/lightbox.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../Javascript/main.js"></script>
+    <script src="../Javascript/lightbox.js"></script>
+
+
+    <title>nuke</title>
+  </head>
+  <body>
+
+    <script>
+
+    $(document).ready(function() {
+
+
+    $(".map_img").click(function (e) { //Offset mouse Position
+        var posX = e.pageX - ($(this).offset().left),
+            posY = e.pageY - ($(this).offset().top);
+        //console.log(posX + ' , ' + posY);
+
+        var mapLayoutHeight = $(".map_layout").outerHeight();
+
+        var posXNew = (parseFloat(posX / mapLayoutHeight)*100).toFixed(1);
+        var posYNew = (parseFloat(posY / mapLayoutHeight)*100).toFixed(1);
+
+        console.log(posXNew + "," + posYNew);
+
+        $(".util_icon").css("left",posXNew+"%").css("top",posYNew+"%");
+        $("#coordsOutputY").val(posYNew+"%");
+        $("#coordsOutputX").val(posXNew+"%");
+    });
+
+
+      var mapLayoutWidth = $(".map_layout").outerHeight();
+      $(".map_layout").css("width",mapLayoutWidth);
+
+      $(".loc_deploy").mouseover(function() {
+        $(".loc_deploy").hide();
+        $(this).next().show();
+        $(this).show();
+      });
+
+      $(".loc_deploy").mouseout(function() {
+        $(".loc_deploy").show();
+        $(this).next().toggle();
+      });
+
+
+    });
+
+    $( window ).resize(function() {
+        var mapLayoutWidth = $(".map_layout").outerHeight();
+        $(".map_layout").css("width",mapLayoutWidth);
+
+    });
+
+
+
+
+
+    </script>
+
+
+    <div id="fullscreen">
+
+    <div style="position: absolute;top: 20px">
+        <div style="display: flex;">
+            <h3>Top:</h3>
+            <input id="coordsOutputY" value="50%" style="margin-left: 5px;text-align: center; " readonly>
+        </div>
+        <div style="display: flex">
+            <h3>Left:</h3>
+            <input id="coordsOutputX" value="50%" style="margin-left: 5px;text-align: center;" readonly>
+        </div>
+    </div>
+
+    <div id="right" style="pointer-events: none">
+
+
+
+        <div class="map_layout" style="pointer-events: none">
+        <img class="map_img" style="pointer-events: all" src="../images/radars/de_nuke.png"/>
+
+
+        <div class="utilities" style="display:flex;" id="smoke">
+
+            <a style="pointer-events: none">
+                <img class="util_icon loc_deploy" src="../images/icons/SVG/ic_smoke_CT.svg" style="left:50%;top:50%"/>
+            </a>
+
+        </div>
+
+
+      </div>
+    </div>
+
+    </div>
+
+
+
+  </body>
+</html>
